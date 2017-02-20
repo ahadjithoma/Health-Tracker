@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+
+    <item
+        android:id="@+id/item_movies"
+        android:title="Προσθήκη"
+        android:visible="true"/>
+
+    <item
+        android:id="@+id/item_music"
+        android:title="Διαγραφή"
+        android:visible="true"/>
+    <item
+        android:id="@+id/item_comedy"
+        android:title="Άκυρο"
+        android:visible="true"/>
+
+</menu>

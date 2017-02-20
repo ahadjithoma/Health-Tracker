@@ -1,0 +1,58 @@
+{
+"doctors":[
+  {
+    "username": "drag_andreas",
+    "password": "da070471",
+    "name": "Ανδρέας",
+    "surname": "Δραγούμης",
+    "specialty": "Ωτορινολαρυγγολόγος",
+    "phone": 2315500011,
+    "location": "Αθήνα"
+  },
+  {
+    "username": "elenaNeuro",
+    "password": "elena_ts_75",
+    "name": "Έλενα",
+    "surname": "Τσιρλή",
+    "specialty": "Νευρολόγος",
+    "phone": 2110634189,
+    "location": "Αθήνα"
+  },
+  {
+    "username": "karagian68",
+    "password": "6kar9gian",
+    "name": "Σπύρος",
+    "surname": "Καραγιαννίδης",
+    "specialty": "Ειδικός Παθολόγος",
+    "phone": 2310556598,
+    "location": "Αθήνα"
+  },
+  {
+    "username": "marypetropoulou",
+    "password": "060162mary",
+    "name": "Μαρία",
+    "surname": "Πετροπούλου",
+    "specialty": "Παιδίατρος",
+    "phone": 2114020355,
+    "location": "Θεσσαλονίκη"
+  },
+  {
+    "username": "saropoulos77",
+    "password": "4444As1234",
+    "name": "Βασίλης",
+    "surname": "Σαρόπουλος",
+    "specialty": "Ενδοκρινολόγος",
+    "phone": 2115567003,
+    "location": "Θεσσαλονίκη"
+  },
+  {
+    "username": "tasos_per",
+    "password": "p3r4k1s",
+    "name": "Αναστάσιος",
+    "surname": "Περάκης",
+    "specialty": "Ψυχίατρος",
+    "phone": 2610458192,
+    "location": "Θεσσαλονίκη"
+  }
+]
+}
