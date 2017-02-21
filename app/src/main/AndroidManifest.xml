@@ -47,7 +47,8 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".activity_phramacy_menu" />
         <activity android:name=".DrugActivity" />
-        <activity android:name=".CustomersActivity"></activity>
+        <activity android:name=".CustomersActivity" />
+        <activity android:name=".DrugHistory"></activity>
     </application>
 
 </manifest>
