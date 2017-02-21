@@ -146,8 +146,8 @@ public class HospitalsActivity extends AppCompatActivity implements AdapterView.
         for (int i = 0; i < contacts.length(); i++) {
             JSONObject c = contacts.getJSONObject(i);
 
-            String name = c.getString("name");
-            String loc = c.getString("location");
+            String name = c.getString("title");
+            String loc = c.getString("address");
             String phone = c.getString("phone");
 
             // tmp hash map for single contact
@@ -155,16 +155,16 @@ public class HospitalsActivity extends AppCompatActivity implements AdapterView.
 
             if (loc.contains(loc)) {
                 // adding each child node to HashMap key => value
-                contact.put("name", name );
-                contact.put("loc", loc);
+                contact.put("title", name );
+                contact.put("address", loc);
                 contact.put("phone", phone);
 
                 // adding contact to contact list
                 contactList.add(contact);
             } else if (loc.equals("Όλα")){
                 // adding each child node to HashMap key => value
-                contact.put("name", name );
-                contact.put("location", loc);
+                contact.put("title", name );
+                contact.put("address", loc);
                 contact.put("phone", phone);
 
                 // adding contact to contact list
@@ -174,7 +174,7 @@ public class HospitalsActivity extends AppCompatActivity implements AdapterView.
 
         ListAdapter adapter = new SimpleAdapter(
                 HospitalsActivity.this, contactList, R.layout.list_item,
-                new String[]{"name", "loc", "phone"}, new int[]{R.id.title, R.id.semi_title, R.id.bottom_title});
+                new String[]{"title", "address", "phone"}, new int[]{R.id.title, R.id.semi_title, R.id.bottom_title});
 
         listView.setAdapter(adapter);
     }

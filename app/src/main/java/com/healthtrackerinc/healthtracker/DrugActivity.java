@@ -59,7 +59,7 @@ public class DrugActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_drug);
 
-        listView = (ListView) findViewById(R.id.list_view);
+        listView = (ListView) findViewById(R.id.drug_list_view);
 
 
         //JSON Data

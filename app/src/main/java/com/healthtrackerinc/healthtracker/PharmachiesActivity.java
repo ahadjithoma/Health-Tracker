@@ -181,8 +181,8 @@ public class PharmachiesActivity extends AppCompatActivity implements AdapterVie
 
             String name = c.getString("name");
             String surname = c.getString("surname");
-            String workingHours = c.getString("workingHours");
-            String loc = c.getString("location");
+            String workingHours = c.getString("working_hours");
+            String loc = c.getString("address");
             String phone = c.getString("phone");
 
             // tmp hash map for single contact
@@ -192,36 +192,36 @@ public class PharmachiesActivity extends AppCompatActivity implements AdapterVie
                 // adding each child node to HashMap key => value
                 contact.put("name", name);
                 contact.put("surname", surname);
-                contact.put("workingHours", workingHours);
+                contact.put("working_hours", workingHours);
                 contact.put("phone", phone);
-                contact.put("location", loc);
+                contact.put("address", loc);
                 // adding contact to contact list
                 contactList.add(contact);
 
             } else if (workingHours.equals("Όλα") && loc.contains(location)){
                 // adding each child node to HashMap key => value
                 contact.put("name", name + " " + surname);
-                contact.put("workingHours", workingHours);
+                contact.put("working_hours", workingHours);
                 contact.put("phone", phone);
-                contact.put("location", loc);
+                contact.put("address", loc);
                 // adding contact to contact list
                 contactList.add(contact);
 
             } else if ( workingHours.contains(workingHours) && location.equals("Όλα")){
                 // adding each child node to HashMap key => value
                 contact.put("name", name + " " + surname);
-                contact.put("workingHours", workingHours);
+                contact.put("working_hours", workingHours);
                 contact.put("phone", phone);
-                contact.put("location", loc);
+                contact.put("address", loc);
                 // adding contact to contact list
                 contactList.add(contact);
 
             } else if (workingHours.equals("Όλα") && location.equals("Όλα")){
                 // adding each child node to HashMap key => value
                 contact.put("name", name + " " + surname);
-                contact.put("workingHours", workingHours);
+                contact.put("working_hours", workingHours);
                 contact.put("phone", phone);
-                contact.put("location", loc);
+                contact.put("address", loc);
                 // adding contact to contact list
                 contactList.add(contact);
             }
@@ -229,7 +229,7 @@ public class PharmachiesActivity extends AppCompatActivity implements AdapterVie
 
         adapter = new SimpleAdapter(
                 PharmachiesActivity.this, contactList, R.layout.list_item,
-                new String[]{"name", "workingHours", "location"}, new int[]{R.id.title, R.id.semi_title, R.id.bottom_title});
+                new String[]{"name", "working_hours", "address"}, new int[]{R.id.title, R.id.semi_title, R.id.bottom_title});
 
         listView.setAdapter(adapter);
     }
