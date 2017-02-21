@@ -140,9 +140,8 @@ public class CustomersActivity extends AppCompatActivity {
 
             String name = c.getString("name");
             String surname = c.getString("surname");
-            String spec = c.getString("specialty");
-            String loc = c.getString("location");
-            String phone = c.getString("phone");
+            String iid = c.getString("IID");
+
 
             // tmp hash map for single contact
             HashMap<String, String> contact = new HashMap<>();
