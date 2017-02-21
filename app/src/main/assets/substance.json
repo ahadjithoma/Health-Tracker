@@ -1,0 +1,28 @@
+{
+  "substance": [
+    {
+      "activeTitle": "Παρακεταμόλη",
+      "drugTitle": "Panadol"
+    },
+    {
+      "activeTitle": "υδροχλωρική ψευδοεφεδρίνη ",
+      "drugTitle": "Becotide "
+    },
+    {
+      "activeTitle": "ιβουπροφαίνη",
+      "drugTitle": "Becotide "
+    },
+    {
+      "activeTitle": "Παρακεταμόλη",
+      "drugTitle": "Nurofen Cold n Flu"
+    },
+    {
+      "activeTitle": "κροσκαρμελόζη νατρίου ",
+      "drugTitle": "Viagra"
+    },
+    {
+      "activeTitle": "φινγκολιμόδη",
+      "drugTitle": "Gilenya"
+    }
+  ]
+}

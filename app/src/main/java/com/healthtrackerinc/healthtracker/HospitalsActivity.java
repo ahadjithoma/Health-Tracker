@@ -42,7 +42,6 @@ import static android.R.id.list;
 public class HospitalsActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     public String location = "Όλα";
-    public String specialty = "Όλα";
     public List<String[]> list = new ArrayList<String[]>();
     public int rowsNum, colNum;
     public String jsonFileName = "hospitals.json";
@@ -148,25 +147,24 @@ public class HospitalsActivity extends AppCompatActivity implements AdapterView.
             JSONObject c = contacts.getJSONObject(i);
 
             String name = c.getString("name");
-            String surname = c.getString("surname");
-            String spec = c.getString("specialty");
+            String loc = c.getString("location");
             String phone = c.getString("phone");
 
             // tmp hash map for single contact
             HashMap<String, String> contact = new HashMap<>();
 
-            if (spec.contains(specialty)) {
+            if (loc.contains(loc)) {
                 // adding each child node to HashMap key => value
-                contact.put("name", name + " " + surname);
-                contact.put("specialty", spec);
+                contact.put("name", name );
+                contact.put("loc", loc);
                 contact.put("phone", phone);
 
                 // adding contact to contact list
                 contactList.add(contact);
-            } else if (specialty.equals("Όλα")){
+            } else if (loc.equals("Όλα")){
                 // adding each child node to HashMap key => value
-                contact.put("name", name + " " + surname);
-                contact.put("specialty", spec);
+                contact.put("name", name );
+                contact.put("location", loc);
                 contact.put("phone", phone);
 
                 // adding contact to contact list
@@ -176,7 +174,7 @@ public class HospitalsActivity extends AppCompatActivity implements AdapterView.
 
         ListAdapter adapter = new SimpleAdapter(
                 HospitalsActivity.this, contactList, R.layout.list_item,
-                new String[]{"name", "specialty", "phone"}, new int[]{R.id.title, R.id.semi_title, R.id.bottom_title});
+                new String[]{"name", "loc", "phone"}, new int[]{R.id.title, R.id.semi_title, R.id.bottom_title});
 
         listView.setAdapter(adapter);
     }

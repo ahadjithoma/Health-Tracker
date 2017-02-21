@@ -49,8 +49,7 @@
         <activity android:name=".DrugActivity" />
         <activity android:name=".CustomersActivity" />
         <activity android:name=".DrugHistory" />
-        <activity android:name=".AdminsMenuActivity" />
-        <activity android:name=".AddDoctorActivity"></activity>
+        <activity android:name=".AdminsMenuActivity"></activity>
     </application>
 
 </manifest>
