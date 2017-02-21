@@ -42,10 +42,10 @@ import au.com.bytecode.opencsv.CSVReader;
 import static android.R.id.list;
 import static java.lang.String.valueOf;
 
-public class DoctorsActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+public class PharmachiesActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     public String location = "Όλα";
-    public String specialty = "Όλα";
+    public String workingHours = "Όλα";
     public List<String[]> list = new ArrayList<String[]>();
     public String jsonFileName = "doctors.json";
     private ListView listView;
@@ -54,12 +54,10 @@ public class DoctorsActivity extends AppCompatActivity implements AdapterView.On
     public JSONArray contacts;
     public ListAdapter adapter;
 
-    // gamietai o nhras
-    // andrea se agapo
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_doctors);
+        setContentView(R.layout.activity_pharmachies);
 
         listView = (ListView) findViewById(R.id.list_view);
 
@@ -74,11 +72,10 @@ public class DoctorsActivity extends AppCompatActivity implements AdapterView.On
         }
 
 
-
-        /** Spinner Specialty **/
+        /** Spinner Working Hours**/
 
         // Spinner element
-        Spinner spinnerSp = (Spinner) findViewById(R.id.specialty_spinner);
+        Spinner spinnerSp = (Spinner) findViewById(R.id.workingHours_spinner);
 
         // Spinner click listener
         spinnerSp.setOnItemSelectedListener(this);
@@ -86,12 +83,12 @@ public class DoctorsActivity extends AppCompatActivity implements AdapterView.On
         // Spinner Drop down elements
         List<String> categoriesSp = new ArrayList<String>();
         categoriesSp.add("Όλα");
-        categoriesSp.add("Παθολόγος");
-        categoriesSp.add("Νευρολόγος");
-        categoriesSp.add("Παιδίατρος");
-        categoriesSp.add("Δερματολόγος");
-        categoriesSp.add("Χειρούργος");
-        categoriesSp.add("Οφθαλμίατρος");
+        categoriesSp.add("Πρωί");
+        categoriesSp.add("Μεσημέρι");
+        categoriesSp.add("Απόγευμα");
+        categoriesSp.add("Βράδυ");
+        categoriesSp.add("Μεσάνυχτα");
+        categoriesSp.add("24/7");
 
         // Creating adapter for spinner
         ArrayAdapter<String> dataAdapterSp = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, categoriesSp);
@@ -101,7 +98,6 @@ public class DoctorsActivity extends AppCompatActivity implements AdapterView.On
 
         // attaching data adapter to spinner
         spinnerSp.setAdapter(dataAdapterSp);
-
 
 
         /** Spinner Location **/
@@ -132,11 +128,9 @@ public class DoctorsActivity extends AppCompatActivity implements AdapterView.On
         spinnerLoc.setAdapter(dataAdapterLoc);
 
 
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener()
-        {
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id)
-            {
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
                 HashMap<String, String> hashMap;
                 hashMap = contactList.get(position);
@@ -146,21 +140,18 @@ public class DoctorsActivity extends AppCompatActivity implements AdapterView.On
                 Bundle bundle = new Bundle();
                 bundle.putSerializable("hashMap", hashMap);
                 dialogFragment.setArguments(bundle);
-                dialogFragment.show(getFragmentManager(),"info");
+                dialogFragment.show(getFragmentManager(), "info");
             }
         });
     }
 
-
-
-
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int pos, long l) {
 
-        if (adapterView.getId()==R.id.specialty_spinner){
-            specialty = adapterView.getItemAtPosition(pos).toString();
+        if (adapterView.getId() == R.id.workingHours_spinner) {
+            workingHours = adapterView.getItemAtPosition(pos).toString();
         }
-        if (adapterView.getId()==R.id.location_spinner){
+        if (adapterView.getId() == R.id.location_spinner) {
             location = adapterView.getItemAtPosition(pos).toString();
         }
 
@@ -177,14 +168,6 @@ public class DoctorsActivity extends AppCompatActivity implements AdapterView.On
         // do something
     }
 
-
-
-
-
-
-
-
-
     public void  display() throws JSONException {
 
         contactList.clear();
@@ -195,45 +178,45 @@ public class DoctorsActivity extends AppCompatActivity implements AdapterView.On
 
             String name = c.getString("name");
             String surname = c.getString("surname");
-            String spec = c.getString("specialty");
+            String workingHours = c.getString("workingHours");
             String loc = c.getString("location");
             String phone = c.getString("phone");
 
             // tmp hash map for single contact
             HashMap<String, String> contact = new HashMap<>();
 
-            if (spec.contains(specialty) && loc.contains(location)) {
+            if (workingHours.contains(workingHours) && loc.contains(location)) {
                 // adding each child node to HashMap key => value
                 contact.put("name", name);
                 contact.put("surname", surname);
-                contact.put("specialty", spec);
+                contact.put("workingHours", workingHours);
                 contact.put("phone", phone);
                 contact.put("location", loc);
                 // adding contact to contact list
                 contactList.add(contact);
 
-            } else if (specialty.equals("Όλα") && loc.contains(location)){
+            } else if (workingHours.equals("Όλα") && loc.contains(location)){
                 // adding each child node to HashMap key => value
                 contact.put("name", name + " " + surname);
-                contact.put("specialty", spec);
+                contact.put("workingHours", workingHours);
                 contact.put("phone", phone);
                 contact.put("location", loc);
                 // adding contact to contact list
                 contactList.add(contact);
 
-            } else if ( spec.contains(specialty) && location.equals("Όλα")){
+            } else if ( workingHours.contains(workingHours) && location.equals("Όλα")){
                 // adding each child node to HashMap key => value
                 contact.put("name", name + " " + surname);
-                contact.put("specialty", spec);
+                contact.put("workingHours", workingHours);
                 contact.put("phone", phone);
                 contact.put("location", loc);
                 // adding contact to contact list
                 contactList.add(contact);
 
-            } else if (specialty.equals("Όλα") && location.equals("Όλα")){
+            } else if (workingHours.equals("Όλα") && location.equals("Όλα")){
                 // adding each child node to HashMap key => value
                 contact.put("name", name + " " + surname);
-                contact.put("specialty", spec);
+                contact.put("workingHours", workingHours);
                 contact.put("phone", phone);
                 contact.put("location", loc);
                 // adding contact to contact list
@@ -242,8 +225,8 @@ public class DoctorsActivity extends AppCompatActivity implements AdapterView.On
         }
 
         adapter = new SimpleAdapter(
-                DoctorsActivity.this, contactList, R.layout.list_item,
-                new String[]{"name", "specialty", "location"}, new int[]{R.id.title, R.id.semi_title, R.id.bottom_title});
+                PharmachiesActivity.this, contactList, R.layout.list_item,
+                new String[]{"name", "workingHours", "location"}, new int[]{R.id.title, R.id.semi_title, R.id.bottom_title});
 
         listView.setAdapter(adapter);
     }
@@ -259,7 +242,7 @@ public class DoctorsActivity extends AppCompatActivity implements AdapterView.On
             jsonObj = new JSONObject(jsonStr);
 
             // Getting JSON Array node
-            contacts = jsonObj.getJSONArray("doctors");
+            contacts = jsonObj.getJSONArray("pharmacies");
         }
 
     }
@@ -279,57 +262,5 @@ public class DoctorsActivity extends AppCompatActivity implements AdapterView.On
         }
         return json;
     }
-
-
-    /*
-        // CSV Data read // Anothetr method instead of using JSON Files
-        String next[] = {};
-        try {
-            CSVReader reader = new CSVReader(new InputStreamReader(getAssets().open("doctors.csv"),"UTF-8"));
-            for(;;) {
-                next = reader.readNext();
-                if(next != null) {
-                    list.add(next);
-                } else {
-                    break;
-                }
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        rowsNum = list.size();
-        colNum = list.get(0).length;
-        //Toast.makeText(getApplicationContext(), list.get(6)[0], Toast.LENGTH_SHORT).show();
-        //Toast.makeText(getApplicationContext(), ""+rowsNum+" "+colNum, Toast.LENGTH_SHORT).show();
-
-
-            /*
-    //csv method
-    public void displayResults(){
-        listView = (ListView) findViewById(R.id.list_view);
-
-        // tmp hash map for single contact
-        HashMap<String, String> contact = new HashMap<>();
-        contactList = new ArrayList<>();
-
-        // adding each child node to HashMap key => value
-        for (int i=0; i<rowsNum; i++){
-            if (specialty.equals(list.get(i)[4].toString())){
-                contact.put("name", list.get(i)[2] + " " + list.get(i)[3]);
-            }
-        }
-        // adding contact to contact list
-        contactList.add(contact);
-
-        ListAdapter adapter = new SimpleAdapter(
-                DoctorsActivity.this, contactList,
-                R.layout.list_item, new String[]{"name"}, new int[]{R.id.name});
-
-        listView.setAdapter(adapter);
-    }
-
-
-*/
-
 
 }
