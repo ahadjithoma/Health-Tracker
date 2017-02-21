@@ -1,10 +1,12 @@
 package com.healthtrackerinc.healthtracker;
 
+import android.annotation.TargetApi;
 import android.app.DialogFragment;
 import android.content.Intent;
 import android.content.res.AssetManager;
 import android.graphics.Color;
 import android.location.Address;
+import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -129,6 +131,7 @@ public class PharmachiesActivity extends AppCompatActivity implements AdapterVie
 
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @TargetApi(Build.VERSION_CODES.HONEYCOMB)
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
