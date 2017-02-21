@@ -178,8 +178,7 @@ public class DoctorsActivity extends AppCompatActivity implements AdapterView.On
         int id = item.getItemId();
         String select = item.getTitle().toString();
         if (select.equals("Add")){
-            Intent myIntent = new Intent(DoctorsActivity.this, AddDoctorActivity.class);
-            startActivity(myIntent);
+
         }
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
@@ -190,7 +189,6 @@ public class DoctorsActivity extends AppCompatActivity implements AdapterView.On
 
     private void addFunction() {
         Toast.makeText(getApplicationContext(), "Add", Toast.LENGTH_SHORT).show();
-
     }
 
 
