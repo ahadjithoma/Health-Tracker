@@ -23,6 +23,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/button"
+            android:onClick="onClickPatientHistory"
             android:textAllCaps="false"/>
 
         <Button
@@ -30,6 +31,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/button2"
+            android:onClick="onClickDrugList"
             android:textAllCaps="false"/>
 
 
@@ -38,6 +40,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/button3"
+            android:onClick="onClickActiveSubstances"
             android:textAllCaps="false"/>
 
     </LinearLayout>
