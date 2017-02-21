@@ -30,7 +30,7 @@ public class UserMenuActivity extends AppCompatActivity {
         startActivity(myIntent);
     }
 
-    public void onClickPharmachies(View view){
+    public void onClickPharmacies(View view){
         Intent myIntent = new Intent(UserMenuActivity.this, PharmachiesActivity.class);
         startActivity(myIntent);
     }

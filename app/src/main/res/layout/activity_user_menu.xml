@@ -40,7 +40,7 @@
             android:textAllCaps="false"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick="onClickPharmachies"
+            android:onClick="onClickPharmacies"
             android:id="@+id/pharmaciesBtn" />
 
         <Button
@@ -56,7 +56,7 @@
             android:textAllCaps="false"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick="onClickDoctors"
+            android:onClick="onClickDrugHistory"
             android:id="@+id/medicinesBtn" />
 
         <Button
