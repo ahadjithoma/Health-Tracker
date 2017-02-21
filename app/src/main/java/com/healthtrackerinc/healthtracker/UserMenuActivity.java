@@ -79,6 +79,18 @@ public class UserMenuActivity extends AppCompatActivity {
             }
         });
 
+        Button settingsBtn = (Button)findViewById(R.id.settingsBtn);
+
+        // Register the onClick listener
+        doctorsBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent myIntent = new Intent(UserMenuActivity.this, SettingsActivity.class);
+                startActivity(myIntent);
+            }
+        });
+
+
     }
 
     public void onClickDoctors(View view){
