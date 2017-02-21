@@ -45,7 +45,7 @@ public class HospitalsActivity extends AppCompatActivity implements AdapterView.
     public String specialty = "Όλα";
     public List<String[]> list = new ArrayList<String[]>();
     public int rowsNum, colNum;
-    public String jsonFileName = "doctors.json";
+    public String jsonFileName = "hospitals.json";
     private ListView listView;
     ArrayList<HashMap<String, String>> contactList;
     public JSONObject jsonObj;
@@ -55,7 +55,7 @@ public class HospitalsActivity extends AppCompatActivity implements AdapterView.
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_doctors);
+        setContentView(R.layout.activity_hospitals);
 
 
         //JSON Data
@@ -133,7 +133,7 @@ public class HospitalsActivity extends AppCompatActivity implements AdapterView.
             jsonObj = new JSONObject(jsonStr);
 
             // Getting JSON Array node
-            contacts = jsonObj.getJSONArray("doctors");
+            contacts = jsonObj.getJSONArray("hospitals");
         }
 
     }

@@ -49,7 +49,7 @@ public class PharmachiesActivity extends AppCompatActivity implements AdapterVie
     public String location = "Όλα";
     public String workingHours = "Όλα";
     public List<String[]> list = new ArrayList<String[]>();
-    public String jsonFileName = "doctors.json";
+    public String jsonFileName = "pharmacies.json";
     private ListView listView;
     ArrayList<HashMap<String, String>> contactList;
     public JSONObject jsonObj;

@@ -14,14 +14,4 @@ public class DoctorMenuActivity extends AppCompatActivity {
         setContentView(R.layout.activity_doctor_menu);
     }
 
-    Button patientsBtn = (Button)findViewById(R.id.button);
-
-    // Register the onClick listener
-    patientsBtn.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            Intent myIntent = new Intent(DoctorMenuActivity.this, PatientHistoryActivity.class);
-            startActivity(myIntent);
-        }
-    });
 }
