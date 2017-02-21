@@ -55,6 +55,7 @@ public class DoctorsActivity extends AppCompatActivity implements AdapterView.On
     public ListAdapter adapter;
 
     //gamietai o nhras
+    // andrea se agapo
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
