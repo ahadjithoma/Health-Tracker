@@ -294,6 +294,7 @@ public class DoctorsActivity extends AppCompatActivity implements AdapterView.On
             // Getting JSON Array node
             contacts = jsonObj.getJSONArray("doctors");
         }
+
     }
 
     public String loadJSONFromAssets() {

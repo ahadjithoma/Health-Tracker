@@ -49,12 +49,8 @@
         <activity android:name=".DrugActivity" />
         <activity android:name=".CustomersActivity" />
         <activity android:name=".DrugHistory" />
-        <activity android:name=".AdminsMenuActivity"></activity>
-        <activity android:name=".ActiveSubstanceActivity"></activity>
-        <activity android:name=".PatientHistoryActivity"></activity>
-        <activity android:name=".DrugListActivity"></activity>
-        <activity android:name=".PharmachiesActivity"></activity>
-
+        <activity android:name=".AdminsMenuActivity" />
+        <activity android:name=".AddHospitalActivity"></activity>
     </application>
 
 </manifest>
