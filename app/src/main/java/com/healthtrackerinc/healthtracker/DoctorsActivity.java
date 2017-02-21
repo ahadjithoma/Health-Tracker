@@ -54,6 +54,7 @@ public class DoctorsActivity extends AppCompatActivity implements AdapterView.On
     public JSONArray contacts;
     public ListAdapter adapter;
 
+    //gamietai o nhras
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
