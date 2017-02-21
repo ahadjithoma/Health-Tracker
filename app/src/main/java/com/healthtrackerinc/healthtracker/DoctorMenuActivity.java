@@ -13,5 +13,5 @@ public class DoctorMenuActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_doctor_menu);
     }
-    
+
 }

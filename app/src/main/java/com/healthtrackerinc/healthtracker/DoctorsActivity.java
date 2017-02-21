@@ -27,9 +27,12 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.nio.charset.Charset;
@@ -75,7 +78,11 @@ public class DoctorsActivity extends AppCompatActivity implements AdapterView.On
             e.printStackTrace();
         }
 
+        spinners();
 
+    }
+
+    private void spinners() {
 
         /** Spinner Specialty **/
 
@@ -154,7 +161,6 @@ public class DoctorsActivity extends AppCompatActivity implements AdapterView.On
     }
 
 
-
     // Generate the Action Bar menu
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -172,7 +178,8 @@ public class DoctorsActivity extends AppCompatActivity implements AdapterView.On
         int id = item.getItemId();
         String select = item.getTitle().toString();
         if (select.equals("Add")){
-            addFunction();
+            Intent myIntent = new Intent(DoctorsActivity.this, AddDoctorActivity.class);
+            startActivity(myIntent);
         }
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
@@ -183,6 +190,7 @@ public class DoctorsActivity extends AppCompatActivity implements AdapterView.On
 
     private void addFunction() {
         Toast.makeText(getApplicationContext(), "Add", Toast.LENGTH_SHORT).show();
+
     }
 
 
@@ -208,11 +216,6 @@ public class DoctorsActivity extends AppCompatActivity implements AdapterView.On
     public void onNothingSelected(AdapterView<?> adapterView) {
         // do something
     }
-
-
-
-
-
 
 
 
@@ -293,7 +296,6 @@ public class DoctorsActivity extends AppCompatActivity implements AdapterView.On
             // Getting JSON Array node
             contacts = jsonObj.getJSONArray("doctors");
         }
-
     }
 
     public String loadJSONFromAssets() {
@@ -310,6 +312,69 @@ public class DoctorsActivity extends AppCompatActivity implements AdapterView.On
             return null;
         }
         return json;
+    }
+
+    private void copyAssets() {
+        AssetManager assetManager = getAssets();
+        String[] files = null;
+        try {
+            files = assetManager.list("");
+        } catch (IOException e) {
+            Log.e("tag", "Failed to get asset file list.", e);
+        }
+        if (files != null) for (String filename : files) {
+            InputStream in = null;
+            OutputStream out = null;
+            try {
+                in = assetManager.open(filename);
+                File outFile = new File(getExternalFilesDir(null), filename);
+                out = new FileOutputStream(outFile);
+                copyFile(in, out);
+            } catch(IOException e) {
+                Log.e("tag", "Failed to copy asset file: " + filename, e);
+            } finally {
+                if (in != null) {
+                    try {
+                        in.close();
+                    } catch (IOException e) {
+                        // NOOP
+                    }
+                }
+                if (out != null) {
+                    try {
+                        out.close();
+                    } catch (IOException e) {
+                        // NOOP
+                    }
+                }
+            }
+        }
+    }
+
+    private void copyFile(InputStream in, OutputStream out) throws IOException {
+        byte[] buffer = new byte[1024];
+        int read;
+        while((read = in.read(buffer)) != -1){
+            out.write(buffer, 0, read);
+        }
+    }
+
+
+    public void writeToJSON(){
+        JSONObject jsonObj = new JSONObject();
+        try {
+            jsonObj.put("username", "3");
+            jsonObj.put("password", "NAME OF STUDENT");
+            jsonObj.put("name", "aaaaaa");
+            jsonObj.put("surname", "Arts");
+            jsonObj.put("specialty", "5/5/1993");
+            jsonObj.put("phone", "99999");
+            jsonObj.put("location", "l");
+        } catch (JSONException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        contacts.put(jsonObj);
     }
 
 
