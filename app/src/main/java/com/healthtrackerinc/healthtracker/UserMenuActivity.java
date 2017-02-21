@@ -91,25 +91,5 @@ public class UserMenuActivity extends AppCompatActivity {
         startActivity(myIntent);
     }
 
-    public void onClickHospitals(View view){
-        Intent myIntent = new Intent(UserMenuActivity.this, HospitalsActivity.class);
-        startActivity(myIntent);
-    }
-
-    public void onClickPharmacies(View view){
-        Intent myIntent = new Intent(UserMenuActivity.this, PharmachiesActivity.class);
-        startActivity(myIntent);
-    }
-
-    public void onClickMedicinesHistory(View view){
-        Intent myIntent = new Intent(UserMenuActivity.this, DrugHistory.class);
-        startActivity(myIntent);
-    }
-
-    public void onClickMaps(View view){
-        Intent myIntent = new Intent(UserMenuActivity.this, MapsActivity.class);
-        startActivity(myIntent);
-    }
-
 
 }
