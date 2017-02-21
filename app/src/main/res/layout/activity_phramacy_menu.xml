@@ -22,6 +22,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/drugBtn"
+            android:onClick="onClickPharmachies"
             android:textAllCaps="false"/>
 
         <Button
@@ -29,6 +30,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/customersbtn"
+            android:onClick="onClickPharmachies"
             android:textAllCaps="false"/>
 
     </LinearLayout>

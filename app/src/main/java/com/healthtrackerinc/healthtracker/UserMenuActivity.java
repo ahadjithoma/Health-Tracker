@@ -93,7 +93,7 @@ public class UserMenuActivity extends AppCompatActivity {
 
     }
 
-    public void onClickDoctors(View view){
+    /*public void onClickDoctors(View view){
         Intent myIntent = new Intent(UserMenuActivity.this, DoctorsActivity.class);
         startActivity(myIntent);
     }
@@ -126,7 +126,7 @@ public class UserMenuActivity extends AppCompatActivity {
     public void onClickSettings(View view){
         Intent myIntent = new Intent(UserMenuActivity.this, SettingsActivity.class);
         startActivity(myIntent);
-    }
+    }*/
 
 
 }
