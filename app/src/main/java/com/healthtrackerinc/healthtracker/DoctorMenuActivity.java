@@ -13,20 +13,5 @@ public class DoctorMenuActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_doctor_menu);
     }
-
-    public void onClickPatientHistory(View view){
-        Intent myIntent = new Intent(DoctorMenuActivity.this, PatientHistoryActivity.class);
-        startActivity(myIntent);
-    }
-
-    public void onClickDrugList(View view){
-        Intent myIntent = new Intent(DoctorMenuActivity.this, DrugListActivity.class);
-        startActivity(myIntent);
-    }
-
-    public void onClickActiveSubstances(View view){
-        Intent myIntent = new Intent(DoctorMenuActivity.this, ActiveSubstanceActivity.class);
-        startActivity(myIntent);
-    }
     
 }
