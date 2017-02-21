@@ -24,16 +24,6 @@ public class UserMenuActivity extends AppCompatActivity {
             }
         });
 
-        Button mapsBtn = (Button)findViewById(R.id.doctorsBtn);
-
-        // Register the onClick listener
-        mapsBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent myIntent = new Intent(UserMenuActivity.this, MapsActivity.class);
-                startActivity(myIntent);
-            }
-        });
     }
 
     public void onClickDoctors(View view){
@@ -43,11 +33,6 @@ public class UserMenuActivity extends AppCompatActivity {
 
     public void onClickDiseasesHistory(View view){
         Intent myIntent = new Intent(UserMenuActivity.this, DiseasesHistoryActivity.class);
-        startActivity(myIntent);
-    }
-
-    public void onClickMaps(View view){
-        Intent myIntent = new Intent(UserMenuActivity.this, MapsActivity.class);
         startActivity(myIntent);
     }
 
