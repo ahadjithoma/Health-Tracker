@@ -23,6 +23,7 @@
             android:textAllCaps="false"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="onClickHospitals"
             android:id="@+id/hospitalsBtn" />
 
 
@@ -39,6 +40,7 @@
             android:textAllCaps="false"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="onClickPharmachies"
             android:id="@+id/pharmaciesBtn" />
 
         <Button
@@ -54,6 +56,7 @@
             android:textAllCaps="false"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="onClickDrugHistory"
             android:id="@+id/medicinesBtn" />
 
         <Button
