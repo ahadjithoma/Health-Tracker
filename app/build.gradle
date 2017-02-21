@@ -29,6 +29,6 @@ dependencies {
     compile 'com.android.support:design:25.0.1'
     compile 'me.srodrigo:androidhintspinner:1.0.0'
     compile 'com.android.support:support-v4:25.0.1'
-    compile 'com.google.android.gms:play-services:10.0.0'
+    compile 'com.google.android.gms:play-services:10.0.1'
     testCompile 'junit:junit:4.12'
 }
