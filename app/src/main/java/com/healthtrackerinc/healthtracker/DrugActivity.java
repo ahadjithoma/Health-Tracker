@@ -128,7 +128,7 @@ public class DrugActivity extends AppCompatActivity{
         for (int i = 0; i < contacts.length(); i++) {
             JSONObject c = contacts.getJSONObject(i);
 
-            String title = c.getString("info");
+            String title = c.getString("title");
             String info = c.getString("information");
 
 
