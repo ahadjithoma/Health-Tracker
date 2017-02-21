@@ -9,28 +9,27 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.healthtrackerinc.healthtracker.activity_phramacy_menu">
-
-    <RelativeLayout
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentTop="true"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true">
 
-        <LinearLayout
-            android:orientation="vertical"
+        <Button
+            android:text="Φάρμακα"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true">
+            android:layout_height="wrap_content"
+            android:id="@+id/drugBtn"
+            android:textAllCaps="false"/>
 
-            <Button
-                android:text="Φάρμακα"
-                android:textAllCaps="false"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/drugBtn" />
-        </LinearLayout>
-    </RelativeLayout>
+        <Button
+            android:text="Πελάτες"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/customersbtn"
+            android:textAllCaps="false"/>
+
+    </LinearLayout>
 </RelativeLayout>
