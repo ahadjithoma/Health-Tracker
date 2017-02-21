@@ -42,12 +42,12 @@ import static android.Manifest.permission.READ_CONTACTS;
 
 public class LoginActivity extends AppCompatActivity {
 
-    // UI references
+    // UI references.
     private AutoCompleteTextView mEmailView;
     private EditText mPasswordView;
     private View mProgressView;
     private View mLoginFormView;
-
+    public boolean user = false, admin = false, pharmacy = false;
     private int cnt;
     private static final String TAG = "LoginActivity";
 
@@ -126,13 +126,35 @@ public class LoginActivity extends AppCompatActivity {
         }
 
         if (isEmailValid(email) && isPasswordValid(password)) {
-            if (email.equals("u") && password.equals("uuuu")) {
+            if (email.equals("user") && password.equals("user")) {
+                // set credentials
+                Account.getInstance().setUserValue(1);
+                Account.getInstance().setAdminValue(0);
+                Account.getInstance().setPharmacyValue(0);
+                Account.getInstance().setDoctorValue(0);
+                // load up the new activity
                 Intent myIntent = new Intent(LoginActivity.this, UserMenuActivity.class);
                 startActivity(myIntent);
-            } else if (email.equals("d") && password.equals("dddd")) {
+            } else if (email.equals("doctor") && password.equals("doctor")) {
+                // set credentials
+                Account.getInstance().setUserValue(0);
+                Account.getInstance().setAdminValue(0);
+                Account.getInstance().setPharmacyValue(0);
+                Account.getInstance().setDoctorValue(1);
+                // load up the new activity
                 Intent myIntent = new Intent(LoginActivity.this, DoctorMenuActivity.class);
                 startActivity(myIntent);
-            } else {
+            } else if (email.equals("admin") && password.equals("admin")) {
+                // set credentials
+                Account.getInstance().setUserValue(0);
+                Account.getInstance().setAdminValue(1);
+                Account.getInstance().setPharmacyValue(0);
+                Account.getInstance().setDoctorValue(0);
+                // load up the new activity
+                Intent myIntent = new Intent(LoginActivity.this, AdminMenuActivity.class);
+                startActivity(myIntent);
+            }
+            else {
                 Toast.makeText(getApplicationContext(), "Wrong Username or Password", Toast.LENGTH_SHORT).show();
             }
         }
