@@ -48,7 +48,10 @@
         <activity android:name=".activity_phramacy_menu" />
         <activity android:name=".DrugActivity" />
         <activity android:name=".CustomersActivity" />
-        <activity android:name=".DrugHistory"></activity>
+        <activity android:name=".DrugHistory" />
+        <activity
+            android:name=".SettingsActivity"
+            android:label="@string/title_activity_settings"></activity>
     </application>
 
 </manifest>
