@@ -59,8 +59,6 @@ public class DrugActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_drug);
 
-        listView = (ListView) findViewById(R.id.drug_list_view);
-
 
         //JSON Data
         try {
@@ -90,7 +88,7 @@ public class DrugActivity extends AppCompatActivity{
                 Bundle bundle = new Bundle();
                 bundle.putSerializable("hashMap", hashMap);
                 dialogFragment.setArguments(bundle);
-                dialogFragment.show(getFragmentManager(),"info");
+                dialogFragment.show(getFragmentManager(),"information");
             }
         });
     }
@@ -148,6 +146,8 @@ public class DrugActivity extends AppCompatActivity{
     public void getJSONData() throws IOException, JSONException {
         String jsonStr = loadJSONFromAssets();
         contactList = new ArrayList<>();
+
+        listView = (ListView) findViewById(R.id.drug_list_view);
 
         if (jsonStr!=null) {
             jsonObj = new JSONObject(jsonStr);
