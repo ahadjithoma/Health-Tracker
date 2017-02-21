@@ -135,7 +135,7 @@ public class DrugActivity extends AppCompatActivity{
 
         adapter = new SimpleAdapter(
                DrugActivity.this, contactList, R.layout.list_item,
-                new String[]{"title", "information"}, new int[]{R.id.title, R.id.semi_title});
+                new String[]{"title", "information"}, new int[]{R.id.title, R.id.bottom_title});
 
         listView.setAdapter(adapter);
     }
