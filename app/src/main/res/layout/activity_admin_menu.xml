@@ -10,4 +10,50 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.healthtrackerinc.healthtracker.AdminMenuActivity">
 
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <Button
+            android:text="Νοσοκομεία"
+            android:textAllCaps="false"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/hospitalsBtn" />
+
+
+        <Button
+            android:text="Γιατροί"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/doctorsBtn"
+            android:onClick="onClickDoctors"
+            android:textAllCaps="false" />
+
+        <Button
+            android:text="Φαρμακεία"
+            android:textAllCaps="false"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/pharmaciesBtn" />
+
+        <Button
+            android:text="Ιστορικό Ασθενειών"
+            android:textAllCaps="false"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/diseasesBtn"
+            android:onClick="onClickDiseasesHistory"/>
+
+        <Button
+            android:text="Ιστορικό Φαρμάκων"
+            android:textAllCaps="false"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/medicinesBtn" />
+    </LinearLayout>
 </RelativeLayout>
