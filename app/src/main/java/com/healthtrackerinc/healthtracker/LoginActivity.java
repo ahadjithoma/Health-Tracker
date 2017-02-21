@@ -151,7 +151,7 @@ public class LoginActivity extends AppCompatActivity {
                 Account.getInstance().setPharmacyValue(0);
                 Account.getInstance().setDoctorValue(0);
                 // load up the new activity;
-                Intent myIntent = new Intent(LoginActivity.this, AdminMenuActivity.class);
+                Intent myIntent = new Intent(LoginActivity.this, AdminsMenuActivity.class);
                 startActivity(myIntent);
             } else if (email.equals("pharmacy") && password.equals("pharmacy")) {
                 // set credentials
