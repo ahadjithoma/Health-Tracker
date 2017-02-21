@@ -23,7 +23,6 @@
             android:textAllCaps="false"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick="onClickHospitals"
             android:id="@+id/hospitalsBtn" />
 
 
@@ -32,7 +31,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/doctorsBtn"
-            android:onClick="onClickDoctors"
             android:textAllCaps="false" />
 
         <Button
@@ -40,7 +38,6 @@
             android:textAllCaps="false"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick="onClickPharmachies"
             android:id="@+id/pharmaciesBtn" />
 
         <Button
@@ -48,15 +45,13 @@
             android:textAllCaps="false"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/diseasesBtn"
-            android:onClick="onClickDiseasesHistory"/>
+            android:id="@+id/diseasesBtn" />
 
         <Button
             android:text="Ιστορικό Φαρμάκων"
             android:textAllCaps="false"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick="onClickDrugHistory"
             android:id="@+id/medicinesBtn" />
 
         <Button
@@ -64,7 +59,6 @@
             android:textAllCaps="false"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick="onClickMaps"
             android:id="@+id/mapsBtn" />
 
         <Button
@@ -72,7 +66,6 @@
             android:textAllCaps="false"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick="onClickSettings"
             android:id="@+id/settingsBtn" />
 
     </LinearLayout>
