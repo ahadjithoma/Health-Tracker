@@ -1,7 +1,9 @@
 package com.healthtrackerinc.healthtracker;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.EditText;
 
 public class AddHospitalActivity extends AppCompatActivity {
@@ -21,14 +23,15 @@ public class AddHospitalActivity extends AppCompatActivity {
     }
 
 
-    public void onClickOk(){
+    public void onClickOk(View view){
 
         AddHospital.getInstance().setAdd(1);
         AddHospital.getInstance().setAddress(address.toString());
 
     }
 
-    public void onClickCancel(){
-
+    public void onClickCancel(View view){
+        Intent myIntent = new Intent(AddHospitalActivity.this, HospitalsActivity.class);
+        startActivity(myIntent);
     }
 }

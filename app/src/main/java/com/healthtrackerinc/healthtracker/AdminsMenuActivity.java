@@ -18,4 +18,9 @@ public class AdminsMenuActivity extends AppCompatActivity {
         Intent myIntent = new Intent(AdminsMenuActivity.this, DoctorsActivity.class);
         startActivity(myIntent);
     }
+
+    public void onClickHospitals(View view){
+        Intent myIntent = new Intent(AdminsMenuActivity.this, HospitalsActivity.class);
+        startActivity(myIntent);
+    }
 }

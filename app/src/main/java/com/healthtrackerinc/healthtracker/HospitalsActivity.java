@@ -164,6 +164,21 @@ public class HospitalsActivity extends AppCompatActivity implements AdapterView.
             contacts = jsonObj.getJSONArray("hospitals");
         }
 
+
+
+        JSONObject jsonObj = new JSONObject();
+        try {
+            jsonObj.put("title", "3");
+            jsonObj.put("address", "NAME OF STUDENT");
+            jsonObj.put("phone", "99999");
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        contacts.put(jsonObj);
+        if (AddHospital.getInstance().getAdd()==1){
+
+        }
+
     }
 
 

@@ -13,7 +13,14 @@
         app:showAsAction="never" />
 
     <item
-        android:id="@+id/action_user"
+        android:id="@+id/action_delete"
+        android:orderInCategory="2"
+        android:title="Delete"
+        android:icon="@android:drawable/ic_menu_search"
+        app:showAsAction="never"></item>
+
+    <item
+        android:id="@+id/action_search"
         android:orderInCategory="2"
         android:title="Search"
         android:icon="@android:drawable/ic_menu_search"
