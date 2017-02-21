@@ -153,6 +153,15 @@ public class LoginActivity extends AppCompatActivity {
                 // load up the new activity;
                 Intent myIntent = new Intent(LoginActivity.this, AdminMenuActivity.class);
                 startActivity(myIntent);
+            } else if (email.equals("pharmacy") && password.equals("pharmacy")) {
+                // set credentials
+                Account.getInstance().setUserValue(0);
+                Account.getInstance().setAdminValue(0);
+                Account.getInstance().setPharmacyValue(1);
+                Account.getInstance().setDoctorValue(0);
+                // load up the new activity;
+                //Intent myIntent = new Intent(LoginActivity.this, AdminMenuActivity.class);
+                //startActivity(myIntent);
             }
             else {
                 Toast.makeText(getApplicationContext(), "Wrong Username or Password", Toast.LENGTH_SHORT).show();

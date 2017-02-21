@@ -170,14 +170,19 @@ public class DoctorsActivity extends AppCompatActivity implements AdapterView.On
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-        String s = item.getTitle().toString();
-        Toast.makeText(getApplicationContext(), "pressed "+s, Toast.LENGTH_SHORT ).show();
-
+        String select = item.getTitle().toString();
+        if (select.equals("Add")){
+            addFunction();
+        }
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    private void addFunction() {
+        Toast.makeText(getApplicationContext(), "Add", Toast.LENGTH_SHORT).show();
     }
 
 
