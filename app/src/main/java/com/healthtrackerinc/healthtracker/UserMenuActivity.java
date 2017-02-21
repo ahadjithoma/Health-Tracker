@@ -13,17 +13,6 @@ public class UserMenuActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_menu);
 
-        Button doctorsBtn = (Button)findViewById(R.id.doctorsBtn);
-
-        // Register the onClick listener
-        doctorsBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent myIntent = new Intent(UserMenuActivity.this, DoctorsActivity.class);
-                startActivity(myIntent);
-            }
-        });
-
     }
 
     public void onClickDoctors(View view){
