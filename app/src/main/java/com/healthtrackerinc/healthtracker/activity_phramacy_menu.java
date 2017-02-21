@@ -35,4 +35,14 @@ public class activity_phramacy_menu extends AppCompatActivity {
             }
         });
     }
+
+    public void onClickDrugs(View view){
+        Intent myIntent = new Intent(activity_phramacy_menu.this, DrugActivity.class);
+        startActivity(myIntent);
+    }
+
+    public void onClickCustomers(View view){
+        Intent myIntent = new Intent(activity_phramacy_menu.this, CustomersActivity.class);
+        startActivity(myIntent);
+    }
 }
