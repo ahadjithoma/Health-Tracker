@@ -44,7 +44,8 @@
         <activity
             android:name=".FloatingPointExample"
             android:label="@string/title_activity_floating_point_example"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".activity_phramacy_menu"></activity>
     </application>
 
 </manifest>
